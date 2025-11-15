@@ -79,8 +79,12 @@ Please ensure your screen/terminal session remains active.
 [ ℹ️ INFO ] : NOTE: Package installation requires downloading dependencies and may take time.
 Please ensure your screen/terminal session remains active.
 [ ✅ SUCCESS ]: **Required Python packages installed successfully.**
-[ ✅ ## 🧠 Challenges Faced and Lessons Learned
-
+[ ✅ SUCCESS ]: ==========================================================
+[ ✅ SUCCESS ]: **SETUP COMPLETE! Your project environment is ready.**
+[ ✅ SUCCESS ]:    - Log file: setup.log
+[ ✅ SUCCESS ]:    - To enter the environment: source .venv/bin/activate
+[ ✅ SUCCESS ]: ==========================================================
+```
 #### 3. **Idempotency Test: Venv and .gitignore Exist**
 
 ```bash
