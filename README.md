@@ -120,7 +120,7 @@ A key challenge arose when debugging initial failures, revealing that even when 
 
 #### The Issue
 
-The error output highlighted two critical problems: a persistent typo (`date_timestamp: command not found`) and the script abruptly exiting after failing the `pip upgrade` attempt, leaving the newly created `.venv` directory behind:
+The error output highlighted two critical problems: a persistent typo (`date_timestamp: command not found`) and the script exiting after being cancelled by the user but outputing an error relating to failed `pip upgrade` attempt, leaving the newly created `.venv` directory behind:
 
 ```bash
 ikenna@IKENNA-T490:~/scripts$ ./setup.sh
@@ -151,10 +151,10 @@ This scenario made it clear that basic error handling (`set -e` or `print_error`
 #### 2. Understanding Here Documents and Quoting (<<EOF)
 When writing the .gitignore file, I encountered the behavior of Here Documents (`cat <<EOF`):
 
-#### * Unquoted Delimiter (`<<EOF`) 
+* Unquoted Delimiter (`<<EOF`) 
 I learned that an unquoted delimiter allows shell variable expansion within the document content. This means if the `.gitignore` accidentally contained a dollar sign like `$HOME` (in my case `$py.class` which was intailly picked up by `set -u` command), the shell would try to replace it with a variable value, potentially corrupting the output file.
 
-#### * Quoted Delimiter (`<<'EOF'`)
+* Quoted Delimiter (`<<'EOF'`)
 I adopted the best practice of quoting the delimiter (`<<'EOF'`). The quotes prevent any form of expansion or interpretation by the shell, ensuring that the content— which is a static configuration file—is written literally to the `.gitignore` file.
 
 This provided necessary security and consistency.
