@@ -1,0 +1,42 @@
+--- 2025-11-15 17:40:42: STARTING SETUP ---
+[ 2025-11-15 17:40:42 ] [ INFO ]: Starting project setup script...
+[ 2025-11-15 17:40:42 ] [ INFO ]: Starting virtual environment check...
+[ 2025-11-15 17:40:42 ] [ WARNING ]: Virtual environment already exists. Proceeding to activation.
+[ 2025-11-15 17:40:42 ] [ INFO ]: Activating virtual environment...
+[ 2025-11-15 17:40:42 ] [ SUCCESS ]: Virtual environment is now active.
+[ 2025-11-15 17:40:42 ] [ INFO ]: Ensuring pip is up to date...
+[ 2025-11-15 17:40:42 ] [ INFO ]: NOTE: The update requires a download and may take time depending on your connection.\nPlease ensure your screen/terminal session remains active.
+Requirement already satisfied: pip in ./.venv/lib/python3.12/site-packages (25.3)
+[ 2025-11-15 17:40:44 ] [ SUCCESS ]: Pip successfully upgraded to the latest version.
+[ 2025-11-15 17:40:44 ] [ INFO ]: Checking for .gitignore...
+[ 2025-11-15 17:40:44 ] [ INFO ]: Creating .gitignore with standard Python rules...
+[ 2025-11-15 17:40:44 ] [ SUCCESS ]: .gitignore created successfully.
+[ 2025-11-15 17:40:44 ] [ INFO ]: Standard Python ignore rules applied.
+[ 2025-11-15 17:40:44 ] [ INFO ]: Installing default Python packages: pandas requests pre-commit...
+[ 2025-11-15 17:40:44 ] [ INFO ]: NOTE: Package installation requires downloading dependencies and may take time.\nPlease ensure your screen/terminal session remains active.
+Requirement already satisfied: pandas in ./.venv/lib/python3.12/site-packages (2.3.3)
+Requirement already satisfied: requests in ./.venv/lib/python3.12/site-packages (2.32.5)
+Requirement already satisfied: pre-commit in ./.venv/lib/python3.12/site-packages (4.4.0)
+Requirement already satisfied: numpy>=1.26.0 in ./.venv/lib/python3.12/site-packages (from pandas) (2.3.4)
+Requirement already satisfied: python-dateutil>=2.8.2 in ./.venv/lib/python3.12/site-packages (from pandas) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in ./.venv/lib/python3.12/site-packages (from pandas) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in ./.venv/lib/python3.12/site-packages (from pandas) (2025.2)
+Requirement already satisfied: charset_normalizer<4,>=2 in ./.venv/lib/python3.12/site-packages (from requests) (3.4.4)
+Requirement already satisfied: idna<4,>=2.5 in ./.venv/lib/python3.12/site-packages (from requests) (3.11)
+Requirement already satisfied: urllib3<3,>=1.21.1 in ./.venv/lib/python3.12/site-packages (from requests) (2.5.0)
+Requirement already satisfied: certifi>=2017.4.17 in ./.venv/lib/python3.12/site-packages (from requests) (2025.11.12)
+Requirement already satisfied: cfgv>=2.0.0 in ./.venv/lib/python3.12/site-packages (from pre-commit) (3.4.0)
+Requirement already satisfied: identify>=1.0.0 in ./.venv/lib/python3.12/site-packages (from pre-commit) (2.6.15)
+Requirement already satisfied: nodeenv>=0.11.1 in ./.venv/lib/python3.12/site-packages (from pre-commit) (1.9.1)
+Requirement already satisfied: pyyaml>=5.1 in ./.venv/lib/python3.12/site-packages (from pre-commit) (6.0.3)
+Requirement already satisfied: virtualenv>=20.10.0 in ./.venv/lib/python3.12/site-packages (from pre-commit) (20.35.4)
+Requirement already satisfied: six>=1.5 in ./.venv/lib/python3.12/site-packages (from python-dateutil>=2.8.2->pandas) (1.17.0)
+Requirement already satisfied: distlib<1,>=0.3.7 in ./.venv/lib/python3.12/site-packages (from virtualenv>=20.10.0->pre-commit) (0.4.0)
+Requirement already satisfied: filelock<4,>=3.12.2 in ./.venv/lib/python3.12/site-packages (from virtualenv>=20.10.0->pre-commit) (3.20.0)
+Requirement already satisfied: platformdirs<5,>=3.9.1 in ./.venv/lib/python3.12/site-packages (from virtualenv>=20.10.0->pre-commit) (4.5.0)
+[ 2025-11-15 17:40:45 ] [ SUCCESS ]: Required Python packages installed successfully.
+[ 2025-11-15 17:40:45 ] [ SUCCESS ]: ==========================================================
+[ 2025-11-15 17:40:45 ] [ SUCCESS ]: SETUP COMPLETE! Your project environment is ready.
+[ 2025-11-15 17:40:45 ] [ SUCCESS ]:    - Log file: setup.log
+[ 2025-11-15 17:40:45 ] [ SUCCESS ]:    - To enter the environment: source .venv/bin/activate
+[ 2025-11-15 17:40:45 ] [ SUCCESS ]: ==========================================================
