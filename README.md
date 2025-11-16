@@ -49,14 +49,14 @@ Assuming you are in the project root directory and have Bash and Python 3 instal
 ikenna@IKENNA-T490:~/scripts$ ./setup.sh
 [ ℹ️ INFO ] : Starting virtual environment check...
 [ ℹ️ INFO ] : Creating virtual environment...
-[ ✅ SUCCESS ]: **Virtual environment created successfully.**
+[ ✅ SUCCESS ]: Virtual environment created successfully.
 [ ℹ️ INFO ] : Activating virtual environment...
-[ ✅ SUCCESS ]: **Virtual environment is now active.**
+[ ✅ SUCCESS ]: Virtual environment is now active.
 [ ℹ️ INFO ] : Ensuring pip is up to date...
 ^C[ ⚠️ WARNING ]: Script interrupted by user (Ctrl+C). Starting cleanup...
 [ ℹ️ INFO ] : Deactivating active virtual environment...
 [ ℹ️ INFO ] : Removing partially created virtual environment directory (.venv)...
-[ ✅ SUCCESS ]: **Cleanup successful. .venv removed.**
+[ ✅ SUCCESS ]: Cleanup successful. .venv removed.
 [ ℹ️ INFO ] : The setup log (setup.log) has been retained for inspection.`
 ```
 #### 2. **Venv Already Exists, Full Setup Continuation**
@@ -66,21 +66,21 @@ ikenna@IKENNA-T490:~/scripts$ ./setup.sh
 [ ℹ️ INFO ] : Starting virtual environment check...
 [ ⚠️ WARNING ]: Virtual environment already exists. Proceeding to activation.
 [ ℹ️ INFO ] : Activating virtual environment...
-[ ✅ SUCCESS ]: **Virtual environment is now active.**
+[ ✅ SUCCESS ]: Virtual environment is now active.
 [ ℹ️ INFO ] : Ensuring pip is up to date...
 [ ℹ️ INFO ] : NOTE: The update requires a download and may take time depending on your connection.
 Please ensure your screen/terminal session remains active.
-[ ✅ SUCCESS ]: **Pip successfully upgraded to the latest version.**
+[ ✅ SUCCESS ]: Pip successfully upgraded to the latest version.
 [ ℹ️ INFO ] : Checking for .gitignore...
 [ ℹ️ INFO ] : Creating .gitignore with standard Python rules...
-[ ✅ SUCCESS ]: **.gitignore created successfully.**
+[ ✅ SUCCESS ]: .gitignore created successfully.
 [ ℹ️ INFO ] : Standard Python ignore rules applied.
 [ ℹ️ INFO ] : Installing default Python packages: pandas requests pre-commit...
 [ ℹ️ INFO ] : NOTE: Package installation requires downloading dependencies and may take time.
 Please ensure your screen/terminal session remains active.
-[ ✅ SUCCESS ]: **Required Python packages installed successfully.**
+[ ✅ SUCCESS ]: Required Python packages installed successfully.
 [ ✅ SUCCESS ]: ==========================================================
-[ ✅ SUCCESS ]: **SETUP COMPLETE! Your project environment is ready.**
+[ ✅ SUCCESS ]: SETUP COMPLETE! Your project environment is ready.
 [ ✅ SUCCESS ]:    - Log file: setup.log
 [ ✅ SUCCESS ]:    - To enter the environment: source .venv/bin/activate
 [ ✅ SUCCESS ]: ==========================================================
@@ -93,19 +93,19 @@ ikenna@IKENNA-T490:~/scripts$ ./setup.sh
 [ ℹ️ INFO ] : Starting virtual environment check...
 [ ⚠️ WARNING ]: Virtual environment already exists. Proceeding to activation.
 [ ℹ️ INFO ] : Activating virtual environment...
-[ ✅ SUCCESS ]: **Virtual environment is now active.**
+[ ✅ SUCCESS ]: Virtual environment is now active.
 [ ℹ️ INFO ] : Ensuring pip is up to date...
 [ ℹ️ INFO ] : NOTE: The update requires a download and may take time depending on your connection.
 Please ensure your screen/terminal session remains active.
-[ ✅ SUCCESS ]: **Pip successfully upgraded to the latest version.**
+[ ✅ SUCCESS ]: Pip successfully upgraded to the latest version.
 [ ℹ️ INFO ] : Checking for .gitignore...
 [ ⚠️ WARNING ]: .gitignore already exists. Skipping creation.
 [ ℹ️ INFO ] : Installing default Python packages: pandas requests pre-commit...
 [ ℹ️ INFO ] : NOTE: Package installation requires downloading dependencies and may take time.
 Please ensure your screen/terminal session remains active.
-[ ✅ SUCCESS ]: **Required Python packages installed successfully.**
+[ ✅ SUCCESS ]: Required Python packages installed successfully.
 [ ✅ SUCCESS ]: ==========================================================
-[ ✅ SUCCESS ]: **SETUP COMPLETE! Your project environment is ready.**
+[ ✅ SUCCESS ]: SETUP COMPLETE! Your project environment is ready.
 [ ✅ SUCCESS ]:    - Log file: setup.log
 [ ✅ SUCCESS ]:    - To enter the environment: source .venv/bin/activate
 [ ✅ SUCCESS ]: ==========================================================
@@ -151,10 +151,10 @@ This scenario made it clear that basic error handling (`set -e` or `print_error`
 #### 2. Understanding Here Documents and Quoting (<<EOF)
 When writing the .gitignore file, I encountered the behavior of Here Documents (`cat <<EOF`):
 
-* Unquoted Delimiter (`<<EOF`) 
+* Unquoted Delimiter (`<<EOF`): 
 I learned that an unquoted delimiter allows shell variable expansion within the document content. This means if the `.gitignore` accidentally contained a dollar sign like `$HOME` (in my case `$py.class` which was intailly picked up by `set -u` command), the shell would try to replace it with a variable value, potentially corrupting the output file.
 
-* Quoted Delimiter (`<<'EOF'`)
+* Quoted Delimiter (`<<'EOF'`): 
 I adopted the best practice of quoting the delimiter (`<<'EOF'`). The quotes prevent any form of expansion or interpretation by the shell, ensuring that the content— which is a static configuration file—is written literally to the `.gitignore` file.
 
 This provided necessary security and consistency.
