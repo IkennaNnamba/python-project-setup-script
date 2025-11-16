@@ -51,7 +51,7 @@ print_info(){
 }
 
 cleanup() {
-    print_warning "Script interrupted by user (Ctrl+C). Starting cleanup..."
+    print_warning "Script interrupted by user. Starting cleanup..."
 
     # 1. Check if the virtual environment is currently active in the shell.
     # $VIRTUAL_ENV is set when the environment is active.
@@ -190,8 +190,8 @@ script_complete() {
 }
 
 
-#---Trap set incase process was cancelled by User---
-trap cleanup INT
+#---Trap set incase process was cancelled by User or killed from another terminal---
+trap cleanup INT TERM
 
 
 # --- Main Script Execution Starts Here ---
